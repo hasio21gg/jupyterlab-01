@@ -7,9 +7,10 @@ Dockerイメージは
 
 [Jupyter Docker Stacks](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-datascience-notebook "Docker Stacks documentation")
 
-```
-Jupyter Docker Stacksabcd
-```
+:::note info
+jupyter-datascience-notebook
+:::
+
 
 ## 1.最初の始め方
 
