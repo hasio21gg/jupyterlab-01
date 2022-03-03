@@ -1,6 +1,6 @@
 # jupyterlab-01
 
-## 0.For
+## 0.はじめに
 
 JupyterLabによるpython開発
 Dockerイメージは
@@ -9,11 +9,15 @@ Dockerイメージは
 
 ```
 Jupyter Docker Stacksabcd
-````
+```
 
-## 1.Setup
+## 1.最初の始め方
 
-```sh:bash
+```sh
+git clone https:\\<repository>
+```
+
+```sh
 mkdir dockerfile
 touch dockerfile/dockerfile
 touch docker-compose.yml
@@ -21,11 +25,11 @@ mkdir notebooks
 mkdir datasets
 ```
 
-## 2.Begin Docker
+## 2.Dockerを始める
 
-### 2.1 Configure
+### 2.1 事前の準備
 
-### 2.2 Build
+### 2.2 Dockerコンテナのビルド
 
 ```sh
 docker-compose up --build
