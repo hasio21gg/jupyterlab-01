@@ -13,12 +13,20 @@ Jupyter Docker Stacksabcd
 
 ## 1.Setup
 
-```sh
-
+```sh:bash
 mkdir dockerfile
 touch dockerfile/dockerfile
 touch docker-compose.yml
 mkdir notebooks
 mkdir datasets
+```
 
+## 2.Begin Docker
+
+### 2.1 Configure
+
+### 2.2 Build
+
+```sh
+docker-compose up --build
 ```
