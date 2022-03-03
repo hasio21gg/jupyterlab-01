@@ -5,18 +5,20 @@
 JupyterLabによるpython開発
 Dockerイメージは
 
-* jupyter/datascience-notebook
-** 
-*
+[Jupyter Docker Stacks](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-datascience-notebook "Docker Stacks documentation")
+
+```
+Jupyter Docker Stacksabcd
+````
 
 ## 1.Setup
 
-mkdir dockerfile
+```sh
 
-touch dockerfile/dockerfile
+$ mkdir dockerfile
+$ touch dockerfile/dockerfile
+$ touch docker-compose.yml
+$ mkdir notebooks
+$ mkdir datasets
 
-touch docker-compose.yml
-
-mkdir notebooks
-
-mkdir datasets
+```
