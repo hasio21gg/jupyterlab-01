@@ -2,10 +2,10 @@
 
 ## 0.はじめに
 
-* Dockerを使う
+* Dockerを使う [^1]
 * DockerはWSLで使う
 * Docker Desktopは使わない
-* Jupyterlabはこれを使う
+* Jupyterlab[^2]はこれを使う
 ** [Jupyter Docker Stacks](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-datascience-notebook "jupyter-datascience-notebook")
 
 
@@ -85,3 +85,7 @@ sns.jointplot(x='数値', y='数値', data=data, xlim=(0, 5), ylim=(0, 5))
 ```
 
 ### 3.2
+
+[^1]:https://docs.docker.jp/index.html
+
+[^2]:https://docs.jupyter.org/en/latest/
