@@ -1,0 +1,48 @@
+FROM jupyter/datascience-notebook
+
+USER root
+
+#社内プロキシ用
+RUN echo "export PATH=$PATH:$HOME/bin" >> ~/.bash_profile & \
+    echo "proxy=http://proxy.sthdg.local:8080" >> /etc/yum.conf
+
+ENV http_proxy=http://proxy.sthdg.local:8080
+ENV https_proxy=http://proxy.sthdg.local:8080
+
+
+#パイプ使用時の異常でビルドステップを止めるため
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
+#必須パッケージ
+RUN apt-get update && \
+    apt-get -y install gcc libmariadb-dev
+RUN apt-get -y install g++
+
+RUN apt-get -y install awscli 
+RUN apt-get -y install net-tools fonts-ipafont vim
+RUN apt-get -y install alien libaio1
+
+
+#RUN rm -rf ~/.cache/matplotlib
+
+#RUN curl -O https://download.oracle.com/otn_software/linux/instantclient/1914000/oracle-instantclient19.14-basic-19.14.0.0.0-1.x86_64.rpm
+#RUN curl -O https://download.oracle.com/otn_software/linux/instantclient/1914000/oracle-instantclient19.14-sqlplus-19.14.0.0.0-1.x86_64.rpm
+#RUN curl -O https://download.oracle.com/otn_software/linux/instantclient/1914000/oracle-instantclient19.14-devel-19.14.0.0.0-1.x86_64.rpm
+#
+#RUN alien -i oracle-instantclient19.14-basic-19.14.0.0.0-1.x86_64.rpm
+#RUN alien -i oracle-instantclient19.14-sqlplus-19.14.0.0.0-1.x86_64.rpm
+#RUN alien -i oracle-instantclient19.14-devel-19.14.0.0.0-1.x86_64.rpm
+#
+#USER jovyan
+#WORKDIR /home/jovyan
+#
+#RUN pip install mysqlclient
+#RUN pip install boto3
+#RUN pip install lckr-jupyterlab-variableinspector
+#RUN pip install cx_Oracle
+###RUN pip install pystan==2.19.1.1
+###RUN pip install convertdate lunarcalendar holidays
+#
+#RUN conda install -c conda-forge prophet
+###RUN pip install pystan
+###RUN pip install prophet

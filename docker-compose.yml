@@ -1,0 +1,16 @@
+version: "3"
+services:
+  notebook:
+    build:
+      context: .
+      dockerfile: ./dockerfile/dockerfile
+    ports:
+      - "8888:8888"
+    environment:
+      - GRANT_SUDO=yes
+      - JUPYTER_ENABLE_LAB=yes
+    volumes:
+      - ./notebooks:/home/jovyan/notebooks
+      - ./datasets:/home/jovyan/datasets
+      - ./.git:/home/jovyan/.git
+    command: start-notebook.sh --NotebookApp.token=''
