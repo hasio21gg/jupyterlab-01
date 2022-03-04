@@ -45,3 +45,43 @@ mkdir datasets
 ```sh
 docker-compose up --build
 ```
+
+## 3
+
+### 3.1 日本語フォントの対応
+
+既定の設定をコピーする
+```
+cp /opt/conda/lib/python3.9/site-packages/matplotlib/mpl-data/matplotlibrc .config/matplotlib/
+```
+設定を追加する
+```
+vi .config/matplotlib/matplotlibrc
+```
+
+256行目 
+```
+font.family:  IPAGothic
+```
+
+キャッシュを削除する
+```
+rm -rf ~/.cache/matplotlib/*
+```
+確認する
+```
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
+%matplotlib inline
+
+plt.plot([1,2,3,4])
+plt.ylabel('数値', fontdict={'family': 'IPAPGothic'})
+plt.show()
+
+data = pd.DataFrame([1, 2, 3, 4], columns=['数値'])
+sns.set(font=['IPAPGothic'])
+sns.jointplot(x='数値', y='数値', data=data, xlim=(0, 5), ylim=(0, 5))
+```
+
+### 3.2
