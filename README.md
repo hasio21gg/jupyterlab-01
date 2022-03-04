@@ -46,7 +46,7 @@ mkdir datasets
 docker-compose up --build
 ```
 
-## 3
+## 3. JupyterLab
 
 ### 3.1 日本語フォントの対応
 
@@ -84,7 +84,29 @@ sns.set(font=['IPAPGothic'])
 sns.jointplot(x='数値', y='数値', data=data, xlim=(0, 5), ylim=(0, 5))
 ```
 
-### 3.2
+### 3.2 UIカスタマイズ
+
+#### 3.2.1
+Terminalのフォントを変更する。Edgeの場合にはmonospaceフォントが有効でない
+```json
+{
+    "fontFamily":"Ricty Diminished",
+    "fontSize":14
+}
+```
+### 4
+#### 4.1 Prophet
+
+インストールに失敗する
+```
+RUN conda install -c conda-forge prophet
+RUN pip install pystan
+RUN pip install fbprophet!pip install fbprophet
+```
+[PROPHET Installation](https://facebook.github.io/prophet/docs/installation.html)
+
+> 
+
 
 [^1]:https://docs.docker.jp/index.html
 
