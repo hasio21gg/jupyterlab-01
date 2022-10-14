@@ -14,3 +14,15 @@ services:
       - ./datasets:/home/jovyan/datasets
       - ./.git:/home/jovyan/.git
     command: start-notebook.sh --NotebookApp.token=''
+  streamlit:
+    build:
+      context: .
+      dockerfile: ./dockerfile/dockerfile2
+    volumes:
+      - ./src:/src
+    ports:
+      - '8501:8501'
+      - '1883:1883'
+    network_mode: "host"
+    command: streamlit hello
+    #command: streamlit run app.py
